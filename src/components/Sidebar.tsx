@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 interface SidebarProps {
     collapsed: boolean;
 }
+
 type MenuItem = Required<MenuProps>['items'][number];
 const Sidebar = ({ collapsed }: SidebarProps) => {
     const [current, setCurrent] = useState('mail');
