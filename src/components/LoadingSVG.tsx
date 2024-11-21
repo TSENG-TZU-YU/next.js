@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
 function LoadingSVG() {
     useEffect(() => {
         gsap.fromTo(
@@ -32,6 +33,20 @@ function LoadingSVG() {
 
     return (
         <div className="body h-[100vh]">
+            <nav className="bg-[#333] text-white p-[1rem] max-w-screen flex h-[70px] items-center">
+                <div className="flex justify-star w-[65%] "></div>
+                <ul className="flex justify-around list-none gap-3 w-[30%]">
+                    <li>
+                        <Link href="/animation">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="/book">AllBooks</Link>
+                    </li>
+                </ul>
+                <div className="flex justify-around w-[10%]  ">
+                    <div className=" p-3 list-none rounded-full bg-[#2c5364]  w-[70px]">login</div>
+                </div>
+            </nav>
             <div className="h-[100%] w-[100%] bg-black text-[#fff] flex items-center justify-center">
                 <p>Welcome View!</p>
             </div>
