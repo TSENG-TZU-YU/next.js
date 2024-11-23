@@ -40,14 +40,18 @@
 }
 #svg {
     stroke-dasharray: 4500;
-    animation: draw 7s  ease;
+    animation: draw 8s  ease;
+    color: rgb(251, 240, 218);
 }
 
 @keyframes draw {
     0% {
         stroke-dashoffset: 4500;
+        fill: none;
     }
     100% {
-        stroke-dashoffset: 0;
+        stroke-dashoffset:0;
+       
     }
 }
+
