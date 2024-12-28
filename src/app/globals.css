@@ -36,10 +36,10 @@
     /* background-color: black; */
     color: white;
 }
-.body {
+/* .body {
     font-family: 'Playwrite AT', cursive;
     width: 100vw;
-}
+} */
 #svg {
     stroke-dasharray: 4500;
     animation: draw 8s ease;
@@ -57,7 +57,20 @@
 }
 
 ::-webkit-scrollbar {
-    width: 0;
+  width: 7px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.1); /* 半透明灰色 */
+  border-radius: 50%; /* 橢圓形 */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* 半透明灰色 */
+  border-radius: 50%; /* 橢圓形 */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1); /* 半透明灰色 */
+  border-radius: 50%; /* 橢圓形 */
 }
 
 .section-title {
