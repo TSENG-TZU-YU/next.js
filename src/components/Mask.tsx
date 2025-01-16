@@ -8,8 +8,8 @@ function Mask() {
     const img_2 = '/images/2.jpg';
     const img_3 = '/images2/3.jpg';
     const container = useRef<HTMLDivElement>(null);
-    const panel = useRef([]);
-    panel.current = [];
+    const panel = useRef<HTMLDivElement[]>([]);
+    // panel.current = [];
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             ScrollTrigger.defaults({
@@ -18,10 +18,12 @@ function Mask() {
             });
             gsap.utils.toArray(panel.current).forEach((panel, index) => {
                 gsap.to(panel as Element, {
-                    backgroundPosition: "-100px",
+                    backgroundPosition: '-100px',
                     direction: 3,
                     scrollTrigger: {
                         trigger: panel as gsap.DOMTarget,
+                        start: "top center", // 面板頂部到達視窗中心時觸發
+                        end: "bottom center", // 面板底部離開視窗中心時結束
                         toggleActions: 'play reverse play reverse',
                     },
                 });
@@ -29,6 +31,8 @@ function Mask() {
                     scale: 1.8,
                     scrollTrigger: {
                         trigger: panel as gsap.DOMTarget,
+                        start: "top center", // 面板頂部到達視窗中心時觸發
+                        end: "bottom center", // 面板底部離開視窗中心時結束
                         toggleActions: 'play reverse play reverse',
                     },
                 });
@@ -36,7 +40,6 @@ function Mask() {
         });
         return () => ctx.revert();
     }, []);
-
     const slides = [
         {
             title: 'Day 1',
@@ -58,14 +61,13 @@ function Mask() {
         },
     ];
 
-    const addToRef = (el: never) => {
+    const addToRef = (el: HTMLDivElement | null) => {
         if (el && !panel.current.includes(el)) {
-            panel.current.push(el);
+            panel.current.push(el); // 將唯一的 DOM 節點加入陣列
         }
     };
-
     return (
-        <div ref={container}  className="container bg-[#f2f2f2]">
+        <div ref={container} className="container bg-[#f2f2f2]">
             <div className="fixed flex flex-col gap-12 items-center justify-center h-screen w-[10%] ">
                 {slides.map((bullet, index) => {
                     return (
