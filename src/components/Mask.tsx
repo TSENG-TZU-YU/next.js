@@ -5,8 +5,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Mask() {
     const img_1 = '/images2/2.jpg';
-    const img_2 = '/images/2.jpg';
-    const img_3 = '/images2/3.jpg';
+    const img_2 = '/images2/1.jpg';
+    const img_3 = '/images/1.jpg';
     const container = useRef<HTMLDivElement>(null);
     const panel = useRef<HTMLDivElement[]>([]);
     // panel.current = [];
@@ -22,8 +22,8 @@ function Mask() {
                     direction: 3,
                     scrollTrigger: {
                         trigger: panel as gsap.DOMTarget,
-                        start: "top center", // 面板頂部到達視窗中心時觸發
-                        end: "bottom center", // 面板底部離開視窗中心時結束
+                        start: "top center", // 視窗中心時觸發
+                        end: "bottom center", // 底部離開視窗中心時結束
                         toggleActions: 'play reverse play reverse',
                     },
                 });
@@ -31,8 +31,8 @@ function Mask() {
                     scale: 1.8,
                     scrollTrigger: {
                         trigger: panel as gsap.DOMTarget,
-                        start: "top center", // 面板頂部到達視窗中心時觸發
-                        end: "bottom center", // 面板底部離開視窗中心時結束
+                        start: "top center", 
+                        end: "bottom center", 
                         toggleActions: 'play reverse play reverse',
                     },
                 });
@@ -67,7 +67,7 @@ function Mask() {
         }
     };
     return (
-        <div ref={container} className="container bg-[#f2f2f2]">
+        <div ref={container} className="container bg-[#f2f2f2] ">
             <div className="fixed flex flex-col gap-12 items-center justify-center h-screen w-[10%] ">
                 {slides.map((bullet, index) => {
                     return (

@@ -94,15 +94,17 @@
 
 @layer components {
     .container {
+        max-width: 100vw;
         max-height: 100vh;
         overflow-y: scroll;
         scroll-snap-type: y mandatory;
         /* 自動將元素對齊到垂直方向的整數倍位置，讓使用者可以更容易地瀏覽內容 */
+        
     }
     .mask {
         -webkit-mask-image: url('../../public/images2/mask2.png');
         -webkit-mask-position: right;
-        -webkit-mask-size: 110% 130%;
+        -webkit-mask-size: 100% 130%;
         height: 100%;
     }
 }
